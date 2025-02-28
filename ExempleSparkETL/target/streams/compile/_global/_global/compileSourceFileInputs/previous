@@ -1,0 +1,1 @@
+["sbt.Task[scala.collection.immutable.Map[java.lang.String, scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]]",{"2.12.10":{"hashes":[["/home3/ma618349/M2/logic/travail/spakexemple/ExempleSparkETL/src/main/scala/SimpleApp.scala","748e9809b8bae851b9e82ccbb518fb77d696805e"]],"lastModifiedTimes":[]}}]

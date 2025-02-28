@@ -1,0 +1,1 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: List(-Xmx32G, -XX:+UseG1GC, -XX:InitiatingHeapOccupancyPercent=35, -XX:-UseGCOverheadLimit, -Dspark.executor.memory=32g, -Dspark.driver.memory=32g)[0m

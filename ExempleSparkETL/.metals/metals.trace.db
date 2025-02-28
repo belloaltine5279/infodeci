@@ -1,0 +1,46 @@
+2025-01-30 10:23:43.237061+01:00 database: close
+org.h2.message.DbException: IO Exception: "Closing"
+IO Exception: "Closing" [90028-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.close(Store.java:374)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1292)
+	at org.h2.engine.Database.closeImpl(Database.java:1254)
+	at org.h2.engine.Database.close(Database.java:1173)
+	at org.h2.engine.Database.close(Database.java:1150)
+	at org.h2.engine.Database.removeSession(Database.java:1077)
+	at org.h2.engine.SessionLocal.close(SessionLocal.java:916)
+	at org.h2.jdbc.JdbcConnection.close(JdbcConnection.java:390)
+	at scala.meta.internal.metals.H2ConnectionProvider.cancel(H2ConnectionProvider.scala:185)
+	at scala.meta.internal.metals.Cancelable$.$anonfun$cancelAll$1(Cancelable.scala:29)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.Cancelable$.cancelAll(Cancelable.scala:28)
+	at scala.meta.internal.metals.MutableCancelable.cancel(MutableCancelable.scala:25)
+	at scala.meta.internal.metals.MetalsLspService.cancel(MetalsLspService.scala:142)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$cancel$1(WorkspaceLspService.scala:1254)
+	at scala.meta.internal.metals.WorkspaceLspService.$anonfun$cancel$1$adapted(WorkspaceLspService.scala:1254)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at scala.meta.internal.metals.WorkspaceLspService.cancel(WorkspaceLspService.scala:1254)
+	at scala.meta.metals.MetalsLanguageServer.cancel(MetalsLanguageServer.scala:94)
+	at scala.meta.metals.MetalsLanguageServer.cancelAll(MetalsLanguageServer.scala:109)
+	at scala.meta.metals.Main$.main(Main.scala:64)
+	at scala.meta.metals.Main.main(Main.scala)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "Closing"
+IO Exception: "Closing" [90028-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Could not sync file /home3/ma618349/M2/logic/travail/spakexemple/ExempleSparkETL/.metals/metals.mv.db [2.3.232/2]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.sync(SingleFileStore.java:181)
+	at org.h2.mvstore.FileStore.writeCleanShutdown(FileStore.java:811)
+	at org.h2.mvstore.FileStore.stop(FileStore.java:277)
+	at org.h2.mvstore.MVStore.closeStore(MVStore.java:693)
+	at org.h2.mvstore.MVStore.close(MVStore.java:643)
+	at org.h2.mvstore.db.Store.close(Store.java:364)
+	... 21 more
+Caused by: java.io.IOException: Erreur d'entrée/sortie
+	at java.base/sun.nio.ch.FileDispatcherImpl.force0(Native Method)
+	at java.base/sun.nio.ch.FileDispatcherImpl.force(FileDispatcherImpl.java:82)
+	at java.base/sun.nio.ch.FileChannelImpl.force(FileChannelImpl.java:468)
+	at org.h2.mvstore.SingleFileStore.sync(SingleFileStore.java:179)
+	... 26 more
